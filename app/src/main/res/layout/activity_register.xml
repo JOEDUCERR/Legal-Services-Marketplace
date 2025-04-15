@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/back"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Card Header -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/text_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join India's Premier Legal Services Platform"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Earn rewards while providing legal services"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_accent" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Full Name -->
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="text"
+            android:hint="Full Name"
+            android:textColor="@color/text_dark"
+            app:boxStrokeColor="@color/primary_accent"
+            app:hintTextColor="@color/primary_accent"
+            android:contentDescription="Enter full name"/>
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="text"
+            android:hint="Email"
+            android:textColor="@color/text_dark"
+            app:boxStrokeColor="@color/primary_accent"
+            app:hintTextColor="@color/primary_accent"
+            android:contentDescription="Enter Email"/>
+        <EditText
+            android:id="@+id/phoneInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="phone"
+            android:hint="Phone Number"
+            android:textColor="@color/text_dark"
+            app:boxStrokeColor="@color/primary_accent"
+            app:hintTextColor="@color/primary_accent"
+            android:contentDescription="Enter Email"/>
+
+
+
+
+        <!-- Service Provider Type -->
+        <EditText
+            android:id="@+id/providerTypeDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:layout_marginBottom="16dp"
+            android:hint="Service Provider Type"
+            android:textColor="@color/text_dark"
+            android:importantForAccessibility="yes"
+            app:boxStrokeColor="@color/secondary_accent"
+            app:hintTextColor="@color/secondary_accent"/>
+
+
+
+        <!-- Experience -->
+        <EditText
+            android:id="@+id/experienceInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="number"
+            android:textColor="@color/text_dark"
+            android:hint="Years of Experience"
+            app:boxStrokeColor="@color/secondary_accent"
+            app:hintTextColor="@color/secondary_accent"
+            android:contentDescription="Enter years of experience"/>
+
+
+        <!-- Bar Council Number -->
+        <EditText
+            android:id="@+id/barCouncilInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/text_dark"
+            android:hint="Bar Council Number (if applicable)"
+            app:boxStrokeColor="@color/secondary_accent"
+            app:hintTextColor="@color/secondary_accent"/>
+
+
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Submit and Start Earning"
+            android:textSize="16sp"
+            android:backgroundTint="@color/highlight_cta"
+            android:textColor="@color/text_dark"
+             />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

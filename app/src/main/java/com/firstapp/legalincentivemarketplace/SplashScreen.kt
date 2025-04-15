@@ -18,7 +18,7 @@ class SplashScreen : AppCompatActivity() {
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         progressBar.visibility = ProgressBar.VISIBLE
         Handler(Looper.getMainLooper()).postDelayed({
-            var i= Intent(this,MainActivity::class.java)
+            var i= Intent(this,Register::class.java)
             startActivity(i)
             finish()
         },2000)
