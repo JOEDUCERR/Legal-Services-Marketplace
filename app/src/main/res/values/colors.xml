@@ -9,5 +9,9 @@
         <color name="text_dark">#1A1A1A</color>
         <color name="text_light">#F9FAFB</color>
         <color name="highlight_cta">#FFC107</color>
+        <color name="backgroundColor">#F5F8FF</color>         <!-- Soft blue background -->
+        <color name="navBackground">#2B5DD1</color>           <!-- Deep blue nav background -->
+        <color name="navIconColor">#FFC107</color>            <!-- Amber yellow icons -->
+        <color name="navTextColor">#FFFFFF</color>            <!-- White text on nav -->
 
 </resources>
