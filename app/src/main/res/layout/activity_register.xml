@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/back"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Register">
 
+    <!-- Form Layout -->
     <LinearLayout
+        android:id="@+id/formLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -61,17 +63,19 @@
             app:boxStrokeColor="@color/primary_accent"
             app:hintTextColor="@color/primary_accent"
             android:contentDescription="Enter full name"/>
+
         <EditText
             android:id="@+id/emailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:hint="Email"
             android:textColor="@color/text_dark"
             app:boxStrokeColor="@color/primary_accent"
             app:hintTextColor="@color/primary_accent"
             android:contentDescription="Enter Email"/>
+
         <EditText
             android:id="@+id/phoneInput"
             android:layout_width="match_parent"
@@ -82,14 +86,11 @@
             android:textColor="@color/text_dark"
             app:boxStrokeColor="@color/primary_accent"
             app:hintTextColor="@color/primary_accent"
-            android:contentDescription="Enter Email"/>
-
-
-
+            android:contentDescription="Enter Phone Number"/>
 
         <!-- Service Provider Type -->
         <EditText
-            android:id="@+id/providerTypeDropdown"
+            android:id="@+id/providerType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
@@ -99,8 +100,6 @@
             android:importantForAccessibility="yes"
             app:boxStrokeColor="@color/secondary_accent"
             app:hintTextColor="@color/secondary_accent"/>
-
-
 
         <!-- Experience -->
         <EditText
@@ -115,7 +114,6 @@
             app:hintTextColor="@color/secondary_accent"
             android:contentDescription="Enter years of experience"/>
 
-
         <!-- Bar Council Number -->
         <EditText
             android:id="@+id/barCouncilInput"
@@ -127,8 +125,6 @@
             app:boxStrokeColor="@color/secondary_accent"
             app:hintTextColor="@color/secondary_accent"/>
 
-
-
         <!-- Submit Button -->
         <Button
             android:id="@+id/submitButton"
@@ -138,11 +134,22 @@
             android:text="Submit and Start Earning"
             android:textSize="16sp"
             android:backgroundTint="@color/highlight_cta"
-            android:textColor="@color/text_dark"
-             />
+            android:textColor="@color/text_dark" />
+
+        <!-- Sign In -->
+        <Button
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="or SignIN"
+            android:gravity="center"
+            android:paddingTop="16dp" />
     </LinearLayout>
 
-
-
-
+    <!-- Fragment Container (Initially hidden) -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 </LinearLayout>

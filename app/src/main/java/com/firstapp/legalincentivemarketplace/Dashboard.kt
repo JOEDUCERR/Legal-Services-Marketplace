@@ -15,7 +15,6 @@ import com.firstapp.legalincentivemarketplace.models.ProviderType
 import com.firstapp.legalincentivemarketplace.models.RequestsAdapter
 import com.firstapp.legalincentivemarketplace.models.ServiceStatus
 
-
 class Dashboard : Fragment() {
 
     private lateinit var welcomeText: TextView
@@ -32,12 +31,18 @@ class Dashboard : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         welcomeText = view.findViewById(R.id.welcomeText)
         pointsText = view.findViewById(R.id.pointsText)
         requestsRecyclerView = view.findViewById(R.id.requestsRecyclerView)
+
+        val username = arguments?.getString("USER_NAME") // Retrieve username from arguments
+        welcomeText.text = "Welcome back, $username!" // Display the username in the TextView
+
         setupRecyclerView()
         loadDashboardData()
     }
+
     private fun setupRecyclerView() {
         val dummyRequests = listOf(
             LegalRequest(
@@ -69,18 +74,24 @@ class Dashboard : Fragment() {
                 providerType = ProviderType.FAMILY_LAWYER,
                 status = ServiceStatus.COMPLETED,
                 price = 2800.0
-            ),        )
+            ),
+        )
         requestsRecyclerView.layoutManager = LinearLayoutManager(context)
-        requestsRecyclerView.adapter = RequestsAdapter(dummyRequests)        // TODO: Set adapter for requests
+        requestsRecyclerView.adapter = RequestsAdapter(dummyRequests)
     }
 
     private fun loadDashboardData() {
         // TODO: Load user data and update UI
-        welcomeText.text = "Welcome back, John Doe!"
         pointsText.text = "Your Incentive Points: 350"
     }
 
     companion object {
-        fun newInstance() = Dashboard()
+        fun newInstance(username: String): Dashboard {
+            val fragment = Dashboard()
+            val bundle = Bundle()
+            bundle.putString("USER_NAME", username)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }

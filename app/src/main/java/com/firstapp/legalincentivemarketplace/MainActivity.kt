@@ -12,24 +12,28 @@ import com.legalservices.marketplace.ui.dashboard.Dashboard
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNav: BottomNavigationView
+    private var username: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomNav = findViewById(R.id.bottomNav)
+        username = intent.getStringExtra("USER_NAME")
+
         setupBottomNavigation()
+
         if (savedInstanceState == null) {
-            loadFragment(Dashboard.newInstance())
+            loadFragment(Dashboard.newInstance(username ?: "User"))
         }
     }
 
     private fun setupBottomNavigation() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_dashboard -> loadFragment(Dashboard.newInstance())
+                R.id.nav_dashboard -> loadFragment(Dashboard.newInstance(username ?: "User"))
                 R.id.nav_services -> loadFragment(ServicesFragment.newInstance())
-                R.id.nav_profile -> loadFragment(Profile.newInstance())
-                else -> false
+                R.id.nav_profile -> loadFragment(Profile.newInstance(username ?: "User"))
             }
             true
         }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    >
+    <!-- res/layout/activity_main.xml -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/text_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login to India's Premier Legal Services Platform"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Earn rewards while providing legal services"
+                android:textSize="16sp"
+                android:textColor="@color/primary_accent" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:inputType="text"
+        android:hint="Full Name"
+        android:textColor="@color/text_dark"
+        app:boxStrokeColor="@color/primary_accent"
+        app:hintTextColor="@color/primary_accent"
+        android:contentDescription="Enter full name"/>
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:textColor="@color/text_dark"
+        app:boxStrokeColor="@color/primary_accent"
+        app:hintTextColor="@color/primary_accent"
+        android:contentDescription="Enter Email"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:inputType="numberPassword"
+        android:hint="Password"
+        android:textColor="@color/text_dark"
+        app:boxStrokeColor="@color/primary_accent"
+        app:hintTextColor="@color/primary_accent"
+        android:contentDescription="Enter Email"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SignIn"
+
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="163dp" />
+</LinearLayout>

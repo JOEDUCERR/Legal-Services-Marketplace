@@ -14,7 +14,6 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.imageview.ShapeableImageView
-
 class Profile : Fragment() {
 
     private lateinit var profileImage: ImageView
@@ -37,7 +36,11 @@ class Profile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initializeViews(view)
+        initializeViews(view) // Initialize views first
+
+        val username = arguments?.getString("USER_NAME") // Retrieve username from arguments
+        nameText.text = "Hello, $username!" // Now set the username text
+
         setupEditButton()
         loadProfileData()
     }
@@ -56,7 +59,6 @@ class Profile : Fragment() {
     private fun setupEditButton() {
         editProfileButton.setOnClickListener {
             // TODO: Navigate to edit profile screen
-
         }
     }
 
@@ -80,7 +82,6 @@ class Profile : Fragment() {
     }
 
     private fun updateUI(provider: LegalServiceProvider) {
-        nameText.text = provider.name
         providerTypeText.text = provider.type.name
         totalCasesText.text = provider.totalCases.toString()
         incentivePointsText.text = provider.incentivePoints.toString()
@@ -97,6 +98,12 @@ class Profile : Fragment() {
     }
 
     companion object {
-        fun newInstance() = Profile()
+        fun newInstance(username: String): Profile {
+            val fragment = Profile()
+            val bundle = Bundle()
+            bundle.putString("USER_NAME", username)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }
