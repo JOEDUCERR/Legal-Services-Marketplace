@@ -14,6 +14,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.imageview.ShapeableImageView
+import com.legalservices.marketplace.ui.dashboard.Dashboard
 class Profile : Fragment() {
 
     private lateinit var profileImage: ImageView
@@ -58,7 +59,12 @@ class Profile : Fragment() {
 
     private fun setupEditButton() {
         editProfileButton.setOnClickListener {
-            // TODO: Navigate to edit profile screen
+            // Navigate to EditProfileFragment
+            val editProfileFragment = EditProfileFragment.newInstance()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, editProfileFragment)
+                .addToBackStack(null)  // Optionally, add this transaction to the back stack
+                .commit()
         }
     }
 

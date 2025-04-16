@@ -1,5 +1,7 @@
 package com.legalservices.marketplace.ui.dashboard
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,7 +38,11 @@ class Dashboard : Fragment() {
         pointsText = view.findViewById(R.id.pointsText)
         requestsRecyclerView = view.findViewById(R.id.requestsRecyclerView)
 
-        val username = arguments?.getString("USER_NAME") // Retrieve username from arguments
+//        val username = arguments?.getString("USER_NAME")
+
+        val sharedPref = requireActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val username = sharedPref.getString("username", "defaultUser")
+// Retrieve username from arguments
         welcomeText.text = "Welcome back, $username!" // Display the username in the TextView
 
         setupRecyclerView()

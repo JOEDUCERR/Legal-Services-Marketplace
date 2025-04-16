@@ -1,5 +1,6 @@
 package com.firstapp.legalincentivemarketplace
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -27,9 +28,18 @@ class Register : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.emailInput)
         val phone = findViewById<EditText>(R.id.phoneInput)
 
+
         btn.setOnClickListener {
             if (name.text.toString().isNotEmpty() && email.text.toString().isNotEmpty() && phone.text.toString().isNotEmpty()) {
                 // Corrected Intent code
+                val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+                val editor = sharedPref.edit()
+                editor.putString("username", name.text.toString())
+                editor.putString("email", email.text.toString())
+                editor.putString("password", 123456.toString())
+                editor.apply() // or editor.commit()
+
                 val intent = Intent(this@Register, MainActivity::class.java)
                 intent.putExtra("USER_NAME", name.text.toString()) // Pass the actual user name
                 startActivity(intent)

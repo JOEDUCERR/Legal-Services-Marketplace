@@ -1,5 +1,7 @@
 package com.firstapp.legalincentivemarketplace
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,11 +30,21 @@ class LoginFragment : Fragment() {
             val nameText = name.text.toString().trim()
             val emailText = email.text.toString().trim()
             val passwordText = password.text.toString().trim()
+            val sharedPref = requireActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE)
+            val username = sharedPref.getString("username", "defaultUser")
+            val email = sharedPref.getString("email", "defaultEmail")
+            val password = sharedPref.getString("password", "defaultPassword")// or editor.commit()
 
             if (nameText.isNotEmpty() && emailText.isNotEmpty() && passwordText.isNotEmpty()) {
-                val intent = Intent(activity, MainActivity::class.java)
-                intent.putExtra("USER_NAME", nameText)
-                startActivity(intent)
+                if(username==nameText && email==emailText && password==passwordText ) {
+                    val intent = Intent(activity, MainActivity::class.java)
+                    intent.putExtra("USER_NAME", nameText)
+                    startActivity(intent)
+                }
+                else{
+                    Toast.makeText(context, "Wrong Credentials", Toast.LENGTH_SHORT).show()
+
+                }
             } else {
                 Toast.makeText(context, "Enter all the credentials", Toast.LENGTH_SHORT).show()
             }
