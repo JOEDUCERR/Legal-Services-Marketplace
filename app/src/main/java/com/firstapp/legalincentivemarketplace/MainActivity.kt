@@ -4,7 +4,9 @@ package com.firstapp.legalincentivemarketplace
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.firstapp.legalincentivemarketplace.services.ServicesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.legalservices.marketplace.ui.dashboard.Dashboard
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_dashboard -> loadFragment(Dashboard.newInstance())
-                R.id.nav_services -> loadFragment(Services.newInstance())
+                R.id.nav_services -> loadFragment(ServicesFragment.newInstance())
                 R.id.nav_profile -> loadFragment(Profile.newInstance())
                 else -> false
             }
