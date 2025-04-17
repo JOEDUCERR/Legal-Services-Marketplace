@@ -41,7 +41,6 @@ class ServiceListFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = ServiceAdapter(emptyList()) { service ->
-            // TODO: Handle service click
             Toast.makeText(context, "Selected: ${service.title}", Toast.LENGTH_SHORT).show()
         }
         recyclerView.layoutManager = LinearLayoutManager(context)

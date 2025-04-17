@@ -1,5 +1,6 @@
 package com.firstapp.legalincentivemarketplace
 
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,8 +40,16 @@ class Profile : Fragment() {
 
         initializeViews(view) // Initialize views first
 
-        val username = arguments?.getString("USER_NAME") // Retrieve username from arguments
-        nameText.text = "Hello, $username!" // Now set the username text
+//        val username = arguments?.getString("USER_NAME")
+// Retrieve username from arguments
+        val sharedPref = requireActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val username = sharedPref.getString("username", "defaultUser")
+        val providerType = sharedPref.getString("providerType", "defaultUser")
+
+//
+        nameText.text = "Hello, $username!"
+        providerTypeText.text =providerType
+// Now set the username text
 
         setupEditButton()
         loadProfileData()
@@ -88,7 +97,6 @@ class Profile : Fragment() {
     }
 
     private fun updateUI(provider: LegalServiceProvider) {
-        providerTypeText.text = provider.type.name
         totalCasesText.text = provider.totalCases.toString()
         incentivePointsText.text = provider.incentivePoints.toString()
         ratingBar.rating = provider.ratings

@@ -2,37 +2,82 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
 
-
+        <!-- Service Title -->
         <EditText
             android:id="@+id/serviceTitleInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Service Title"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Name -->
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name"
+            android:inputType="textPersonName"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Service Description -->
         <EditText
             android:id="@+id/serviceDescriptionInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Service Description"
             android:inputType="textMultiLine"
-            android:lines="4"
             android:gravity="top"
-            android:layout_marginTop="12dp" />
+            android:lines="5"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="12dp" />
 
+        <!-- Amount -->
+        <EditText
+            android:id="@+id/serviceAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Amount"
+            android:inputType="number"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Submit Button -->
         <Button
             android:id="@+id/submitServiceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"
-            android:layout_marginTop="16dp" />
+            android:textAllCaps="false"
+            android:backgroundTint="@color/navBackground"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"/>
 
     </LinearLayout>
 </ScrollView>

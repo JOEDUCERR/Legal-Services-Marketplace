@@ -4,4 +4,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+    <style name="Box">
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">#C85B5B</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
 </resources>

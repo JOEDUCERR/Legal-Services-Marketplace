@@ -27,6 +27,7 @@ class Register : AppCompatActivity() {
         val name = findViewById<EditText>(R.id.nameInput)
         val email = findViewById<EditText>(R.id.emailInput)
         val phone = findViewById<EditText>(R.id.phoneInput)
+        val providertype=findViewById<EditText>(R.id.providerType)
 
 
         btn.setOnClickListener {
@@ -38,13 +39,15 @@ class Register : AppCompatActivity() {
                 editor.putString("username", name.text.toString())
                 editor.putString("email", email.text.toString())
                 editor.putString("password", 123456.toString())
+                editor.putString("providerType", providertype.text.toString())
+
                 editor.apply() // or editor.commit()
 
                 val intent = Intent(this@Register, MainActivity::class.java)
                 intent.putExtra("USER_NAME", name.text.toString()) // Pass the actual user name
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Enter all the credentials", Toast.LENGTH_SHORT).show()
+                showCustomToast("Fill the Credentials")
             }
         }
 
@@ -66,5 +69,20 @@ class Register : AppCompatActivity() {
             .replace(R.id.fragmentContainer, fragment)
             .commit()
         return true
+    }
+    private fun showCustomToast(message: String) {
+        val inflater = layoutInflater
+        val layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.toastContainer))
+
+        // Set the message to the TextView inside the custom toast
+        val toastMessage: TextView = layout.findViewById(R.id.toastMessage)
+        toastMessage.text = message
+
+        // Create and show the custom Toast
+        val customToast = Toast(applicationContext)
+        customToast.duration = Toast.LENGTH_SHORT
+        customToast.view = layout
+        customToast.setGravity(android.view.Gravity.CENTER, 0, 0)
+        customToast.show()
     }
 }

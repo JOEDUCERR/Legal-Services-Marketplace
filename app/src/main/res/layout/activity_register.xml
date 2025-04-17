@@ -9,7 +9,6 @@
     android:gravity="center"
     tools:context=".Register">
 
-    <!-- Form Layout -->
     <LinearLayout
         android:id="@+id/formLayout"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         android:padding="24dp"
         android:gravity="center_horizontal">
 
-        <!-- Card Header -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +49,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Full Name -->
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="match_parent"
@@ -88,7 +85,6 @@
             app:hintTextColor="@color/primary_accent"
             android:contentDescription="Enter Phone Number"/>
 
-        <!-- Service Provider Type -->
         <EditText
             android:id="@+id/providerType"
             android:layout_width="match_parent"
@@ -101,7 +97,6 @@
             app:boxStrokeColor="@color/secondary_accent"
             app:hintTextColor="@color/secondary_accent"/>
 
-        <!-- Experience -->
         <EditText
             android:id="@+id/experienceInput"
             android:layout_width="match_parent"
@@ -114,7 +109,6 @@
             app:hintTextColor="@color/secondary_accent"
             android:contentDescription="Enter years of experience"/>
 
-        <!-- Bar Council Number -->
         <EditText
             android:id="@+id/barCouncilInput"
             android:layout_width="match_parent"
@@ -125,7 +119,6 @@
             app:boxStrokeColor="@color/secondary_accent"
             app:hintTextColor="@color/secondary_accent"/>
 
-        <!-- Submit Button -->
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
@@ -136,7 +129,6 @@
             android:backgroundTint="@color/highlight_cta"
             android:textColor="@color/text_dark" />
 
-        <!-- Sign In -->
         <Button
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -146,7 +138,6 @@
             android:paddingTop="16dp" />
     </LinearLayout>
 
-    <!-- Fragment Container (Initially hidden) -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
